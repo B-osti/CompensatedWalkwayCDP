@@ -109,7 +109,7 @@
        <item>
         <widget class="CDPBaseLabel" name="label_3">
          <property name="text">
-          <string>Crane movement</string>
+          <string>MINI TISS</string>
          </property>
         </widget>
        </item>
