@@ -25,34 +25,31 @@
   <Parameters>
     <Parameter Description="Delay before setting Transmission Error alarm." Name="SignalTimeout" PreviousValue="1" TimeLastChanged="0" Unit="s" Value="1"></Parameter>
   </Parameters>
-  <Transport ListenPort="0" LocalName="ETH0" Model="TCPTransport" Name="NetworkTransport" RemoteIP="158.38.140.72" RemotePort="502" Timeout="1"></Transport>
+  <Transport ListenPort="0" LocalName="ETH0" Model="TCPTransport" Name="NetworkTransport" RemoteIP="158.38.140.56" RemotePort="502" Timeout="1"></Transport>
 
   <Packets>
     <Packet DigitalModuleHandling="AlignAdjacent" DigitalRegistersAreLinear="0" FunctionCode="ReadWriteMultipleRegisters" Model="ModbusIO.ModbusMasterPacket" ModuleOrdering="AsConfigured" Name="IO" NetworkConvert="1" ReadAddress="0" SendMode="Periodic" SlaveId="1" WriteAddress="32000">
       <Module Model="IOModule" Name="Inputs" Description="A basic input and/or output module that accepts one or more CDPSignalChannels." InputBytesReservedAfter="0" InputBytesReservedBefore="0" OutputBytesReservedAfter="0" OutputBytesReservedBefore="0">
-        <Channel Input="0" Model="CDPSignalChannel&lt;short&gt;" Name="Input" Type="short"></Channel>
-        <Channel Input="0" Model="CDPSignalChannel&lt;short&gt;" Name="Input1" Type="short"></Channel>
-        <Channel Input="0" Model="CDPSignalChannel&lt;short&gt;" Name="Input2" Type="short"></Channel></Module>
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned int&gt;" Name="Input1" Type="unsigned int"></Channel>
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned int&gt;" Name="CDPSignalChannel" Type="unsigned int"></Channel>
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned int&gt;" Name="CDPSignalChannel1" Type="unsigned int" InternalValue="0" NetworkConvert="0" Routing="" Unit="" Value="0"></Channel>
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned int&gt;" Name="CDPSignalChannel2" Type="unsigned int" InternalValue="0" NetworkConvert="0" Routing="" Unit="" Value="0"></Channel></Module>
       <Module Model="IOModule" Name="Outputs" Description="A basic input and/or output module that accepts one or more CDPSignalChannels." InputBytesReservedAfter="0" InputBytesReservedBefore="0" OutputBytesReservedAfter="0" OutputBytesReservedBefore="0">
         <Channel Input="1" Model="CDPSignalChannel&lt;unsigned short&gt;" Name="Output1_Pitch" Type="unsigned short" Routing="untitled5App.ForceFeedbackJoystick.y.Value" NetworkConvert="1"></Channel>
         <Channel Input="1" Model="CDPSignalChannel&lt;unsigned short&gt;" Name="Output2_Jaw" Type="unsigned short" InternalValue="0" NetworkConvert="1" Routing="untitled5App.ForceFeedbackJoystick.x.Value" Unit="" Value="0"></Channel>
         <Channel Input="1" Model="CDPSignalChannel&lt;unsigned short&gt;" Name="Output3_Ex" Type="unsigned short" InternalValue="0" NetworkConvert="1" Routing="untitled5App.ForceFeedbackJoystick.Slider1.Value" Unit="" Value="0"></Channel></Module></Packet>
-    <Packet DigitalModuleHandling="AlignAdjacent" DigitalRegistersAreLinear="0" FunctionCode="ReadWriteMultipleRegisters" Model="ModbusIO.ModbusMasterPacket" ModuleOrdering="AsConfigured" Name="IO_2" NetworkConvert="1" ReadAddress="0" SendMode="Periodic" SlaveId="1" WriteAddress="32007" Description="A packet containing data to be exchanged with the device">
-      <Module Model="IOModule" Name="Input" Description="A basic input and/or output module that accepts one or more CDPSignalChannels." InputBytesReservedAfter="0" InputBytesReservedBefore="0" OutputBytesReservedAfter="0" OutputBytesReservedBefore="0">
-        <Channel Input="0" Model="CDPSignalChannel&lt;bool&gt;" Name="Input1" Nr="1" Type="bool" Description="" DisableOperators="0" InternalValue="0" NetworkConvert="0" Routing="" RoutingStatus="" Unit="" Value="0"></Channel></Module>
+    <Packet DigitalModuleHandling="AlignAdjacent" DigitalRegistersAreLinear="0" FunctionCode="ReadWriteMultipleRegisters" Model="ModbusIO.ModbusMasterPacket" ModuleOrdering="AsConfigured" Name="IO1" NetworkConvert="1" ReadAddress="0" SendMode="Periodic" SlaveId="1" WriteAddress="32007" Description="A packet containing data to be exchanged with the device">
       <Module Model="IOModule" Name="Output" Description="A basic input and/or output module that accepts one or more CDPSignalChannels." InputBytesReservedAfter="0" InputBytesReservedBefore="0" OutputBytesReservedAfter="0" OutputBytesReservedBefore="0">
-        <Channel Input="1" Model="CDPSignalChannel&lt;bool&gt;" Name="StartMotor" Nr="1" Type="bool" Routing="untitled5App.ForceFeedbackJoystick.Button_2.Value" NetworkConvert="1"></Channel></Module></Packet>
-    <Packet DigitalModuleHandling="AlignAdjacent" DigitalRegistersAreLinear="0" FunctionCode="ReadWriteMultipleRegisters" Model="ModbusIO.ModbusMasterPacket" ModuleOrdering="AsConfigured" Name="IO_3" NetworkConvert="1" ReadAddress="0" SendMode="Periodic" SlaveId="1" WriteAddress="32008">
-      <Module Model="IOModule" Name="Input" Description="A basic input and/or output module that accepts one or more CDPSignalChannels." InputBytesReservedAfter="0" InputBytesReservedBefore="0" OutputBytesReservedAfter="0" OutputBytesReservedBefore="0">
-        <Channel Input="0" Model="CDPSignalChannel&lt;bool&gt;" Name="input" Nr="1" Type="bool" InternalValue="0" NetworkConvert="0" Routing="" Unit="" Value="0"></Channel></Module>
-      <Module Model="IOModule" Name="Output" Description="A basic input and/or output module that accepts one or more CDPSignalChannels." InputBytesReservedAfter="0" InputBytesReservedBefore="0" OutputBytesReservedAfter="0" OutputBytesReservedBefore="0">
-        <Channel Input="1" Model="CDPSignalChannel&lt;bool&gt;" Name="Stop" Nr="1" Type="bool" Description="" DisableOperators="0" InternalValue="0" NetworkConvert="1" Routing="untitled5App.ForceFeedbackJoystick.Button_3.Value" RoutingStatus="" Unit="" Value="0"></Channel></Module></Packet>
-    <Packet DigitalModuleHandling="AlignAdjacent" DigitalRegistersAreLinear="0" FunctionCode="ReadWriteMultipleRegisters" Model="ModbusIO.ModbusMasterPacket" ModuleOrdering="AsConfigured" Name="IO_4" NetworkConvert="1" ReadAddress="0" SendMode="Periodic" SlaveId="1" WriteAddress="32009">
-      <Module Model="IOModule" Name="Input" Description="A basic input and/or output module that accepts one or more CDPSignalChannels." InputBytesReservedAfter="0" InputBytesReservedBefore="0" OutputBytesReservedAfter="0" OutputBytesReservedBefore="0">
-        <Channel Input="0" Model="CDPSignalChannel&lt;bool&gt;" Name="Enable" Nr="1" Type="bool" InternalValue="0" NetworkConvert="0" Routing="" Unit="" Value="0"></Channel></Module>
-      <Module Model="IOModule" Name="Output" Description="A basic input and/or output module that accepts one or more CDPSignalChannels." InputBytesReservedAfter="0" InputBytesReservedBefore="0" OutputBytesReservedAfter="0" OutputBytesReservedBefore="0">
-        <Channel Input="1" Model="CDPSignalChannel&lt;bool&gt;" Name="EnableCrane" Nr="1" Type="bool" InternalValue="0" NetworkConvert="1" Routing="untitled5App.ForceFeedbackJoystick.Button_0.Value" Unit="" Value="0"></Channel>
-        <Channel Input="1" Model="CDPSignalChannel&lt;bool&gt;" Name="StartCompensation" Nr="1" Type="bool" NetworkConvert="1"></Channel>
-        <Channel Input="1" Model="CDPSignalChannel&lt;bool&gt;" Name="StopCompensation" Nr="1" Type="bool" InternalValue="0" NetworkConvert="1" Routing="" Unit="" Value="0"></Channel></Module></Packet></Packets>
+        <Channel Input="1" Model="CDPSignalChannel&lt;bool&gt;" Name="StartMotor" Nr="1" Type="bool" Routing="untitled5App.ForceFeedbackJoystick.Button_2.Value" NetworkConvert="1"></Channel>
+        <Channel Input="1" Model="CDPSignalChannel&lt;bool&gt;" Name="Stop" Nr="1" Type="bool" Value="0" Routing="untitled5App.ForceFeedbackJoystick.Button_3.Value" NetworkConvert="1"></Channel>
+        <Channel Input="1" Model="CDPSignalChannel&lt;bool&gt;" Name="EnableCrane" Nr="1" Type="bool" Value="0" Routing="untitled5App.ForceFeedbackJoystick.Button_0.Value" NetworkConvert="1"></Channel></Module></Packet>
+    <Packet DigitalModuleHandling="AlignAdjacent" DigitalRegistersAreLinear="0" FunctionCode="ReadHoldingRegisters" Model="ModbusIO.ModbusMasterPacket" ModuleOrdering="AsConfigured" Name="IO3" NetworkConvert="1" ReadAddress="0" SendMode="Periodic" SlaveId="1" WriteAddress="32008">
+      <Module Model="IOModule" Name="Inpur" Description="A basic input and/or output module that accepts one or more CDPSignalChannels." InputBytesReservedAfter="0" InputBytesReservedBefore="0" OutputBytesReservedAfter="0" OutputBytesReservedBefore="0">
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned short&gt;" Name="Roll" Type="unsigned short" NetworkConvert="1"></Channel>
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned short&gt;" Name="Pitch" Type="unsigned short" InternalValue="0" NetworkConvert="1" Routing="" Unit="" Value="0"></Channel>
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned short&gt;" Name="Yaw" Type="unsigned short" InternalValue="0" NetworkConvert="1" Routing="" Unit="" Value="0"></Channel>
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned short&gt;" Name="Temp" Type="unsigned short" InternalValue="0" NetworkConvert="1" Routing="" Unit="" Value="0"></Channel>
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned short&gt;" Name="Boom" Type="unsigned short" InternalValue="0" NetworkConvert="1" Routing="" Unit="" Value="0"></Channel>
+        <Channel Input="0" Model="CDPSignalChannel&lt;unsigned short&gt;" Name="Base" Type="unsigned short" InternalValue="0" NetworkConvert="1" Routing="" Unit="" Value="0"></Channel></Module></Packet></Packets>
   
 </Component>
